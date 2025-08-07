@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FreshCart Bootstrap 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .navbar-nav .nav-link {
+            padding-right: 1rem;
+            padding-left: 1rem;
+            color: #223253;
+            font-weight: 500;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            color: #2a9d8f;
+        }
+
+        .btn-all-departments {
+            background-color: #00b517;
+            color: white;
+            font-weight: 600;
+        }
+
+        .btn-all-departments:hover,
+        .btn-all-departments:focus {
+            background-color: #018c11;
+            color: white;
+        }
+
+        .location-btn {
+            border-color: #ced4da;
+            color: #3a4968;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            position: relative;
+            color: #3a4968;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .icon-btn .badge {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-color: #d2eadf;
+            border-radius: 0.5rem;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .hero-text .badge-sale {
+            background-color: #ffb703;
+            color: #222;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 9999px;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-text h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+            line-height: 1.1;
+            color: #0c1e2f;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #6c757d;
+            max-width: 500px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text .btn-show {
+            background-color: #0c1e2f;
+            color: white;
+            font-weight: 600;
+            padding: 0.625rem 1.5rem;
+            border-radius: 0.375rem;
+            border: none;
+        }
+
+        .hero-text .btn-show:hover,
+        .hero-text .btn-show:focus {
+            background-color: #07344a;
+            color: white;
+        }
+
+        .hero-image-wrap {
+            position: relative;
+            max-width: 420px;
+            margin-left: auto;
+        }
+
+        .hero-image-wrap img {
+            border-radius: 0.5rem;
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Circular background behind image */
+        .hero-circle-bg {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 320px;
+            height: 320px;
+            background-color: #026c3e;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        /* Green arc */
+        .hero-circle-arc {
+            position: absolute;
+            top: 50%;
+            right: 8px;
+            width: 210px;
+            height: 210px;
+            border: 4px solid #00b517;
+            border-radius: 50%;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            transform: translateY(-50%) rotate(20deg);
+            z-index: 2;
+        }
+
+        /* Decorative small cards */
+        .decorative-card {
+            background: white;
+            box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 0.1);
+            border-radius: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.85rem;
+            width: 120px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .decorative-card img {
+            width: 36px;
+            height: 36px;
+            border-radius: 0.3rem;
+            object-fit: cover;
+            flex-shrink: 0;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+        }
+
+        .decorative-card .info {
+            flex: 1;
+            line-height: 1.1;
+        }
+
+        .decorative-card .info .title {
+            font-weight: 600;
+            color: #223253;
+        }
+
+        .decorative-card .info .rating {
+            font-size: 0.75rem;
+            color: #6c757d;
+        }
+
+        .decorative-card .rating-stars {
+            color: #f4c150;
+            font-size: 0.75rem;
+            margin-left: auto;
+            font-weight: 600;
+            user-select: none;
+        }
+
+        /* Positions for cards around image */
+        .card-kiwi {
+            position: absolute;
+            top: 2.5rem;
+            left: 52%;
+            transform: translateX(-50%);
+            z-index: 4;
+        }
+
+        .card-delivery {
+            position: absolute;
+            bottom: 50%;
+            left: 40%;
+            transform: translate(-50%, 50%);
+            background-color: #e7f8ee;
+            font-weight: 600;
+            color: #0c662a;
+            padding: 0.3rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.85rem;
+            box-shadow: 0 0.1rem 0.25rem rgb(0 109 55 / 0.2);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 4;
+        }
+
+        .card-avocado {
+            position: absolute;
+            top: 55%;
+            right: -10px;
+            transform: translateY(-50%);
+            z-index: 4;
+        }
+
+        .card-avocado .rating-stars {
+            margin-left: 6px;
+            color: #9fd68a;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .category-card .card-img-top {
+            height: 120px;
+            object-fit: contain;
+            padding: 1rem;
+        }
+
+        .category-card {
+            transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+        }
+
+        .nav-arrows .btn {
+            width: 32px;
+            height: 32px;
+            padding: 0;
+            line-height: 32px;
+            text-align: center;
+        }
+
+        .promo-banner {
+            background-color: #f1f3f6;
+            /* Light grey background for the banner */
+            background-repeat: no-repeat;
+            background-size: contain;
+            /* Ensure the image fits without being cut off */
+            background-position: right center;
+            /* Position the image to the right and vertically centered */
+
+            min-height: 220px;
+            /* Give the banner a minimum height */
+
+            /* Use flexbox to vertically align the text content */
+            display: flex;
+            align-items: center;
+
+            /* Add a subtle transition for a hover effect */
+            transition: box-shadow .2s ease-in-out;
+        }
+
+        .promo-banner:hover {
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        }
+
+        /* Custom button style to match the dark blue button in the image */
+        .btn-dark-blue {
+            background-color: #0c233b;
+            color: #fff;
+            padding: 0.6rem 1.75rem;
+            border-radius: 8px;
+            /* Slightly rounded corners */
+            font-weight: 500;
+        }
+
+        .btn-dark-blue:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* On smaller screens (tablets and below), adjust the image size and position */
+        @media (max-width: 992px) {
+            .promo-banner {
+                background-size: 40%;
+            }
+        }
+
+        /* On mobile screens, stack the text above the image */
+        @media (max-width: 576px) {
+            .promo-banner {
+                background-size: 60%;
+                background-position: bottom right;
+                min-height: 250px;
+                align-items: flex-start;
+                /* Align text to the top */
+            }
+
+            .promo-banner .content {
+                width: 100%;
+                /* Allow text to take full width */
+            }
+        }
+
+        .product-card {
+            border: 1px solid #e9ecef;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .4rem 1.5rem rgba(0, 0, 0, .1);
+        }
+
+        .product-card .card-img-top {
+            height: 160px;
+            object-fit: contain;
+            padding: 1.25rem;
+        }
+
+        .product-card .card-title a {
+            color: #212529;
+            text-decoration: none;
+            transition: color .2s ease;
+        }
+
+        .product-card .card-title a:hover {
+            color: #0d6efd;
+            /* Bootstrap primary blue */
+        }
+
+        .ratings .bi-star-fill {
+            color: #ffc107;
+            /* Bootstrap yellow for filled stars */
+        }
+
+        .product-badge .badge {
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        /* Custom badge for "Buy 1 Get..." offers */
+        .badge-offer {
+            background-color: #dc3545;
+            /* Bootstrap danger red */
+            color: white;
+            font-size: 0.7em !important;
+        }
+
+        /* Style for the main promotional banner */
+        .promo-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/banner-deal.jpg') no-repeat center center;
+            background-size: cover;
+            border: none;
+        }
+
+        .promo-banner h2 {
+            font-size: 1.75rem;
+        }
+
+        /* Custom bright green button */
+        .btn-brand-green {
+            background-color: #00b853;
+            border-color: #00b853;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            font-weight: 600;
+        }
+
+        .btn-brand-green:hover {
+            background-color: #00a048;
+            border-color: #009643;
+            color: white;
+        }
+
+        /* Product Card styles */
+        .deal-card {
+            border: 1px solid #e9ecef;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .deal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .4rem 1.5rem rgba(0, 0, 0, .08);
+        }
+
+        .deal-card .card-img-top {
+            height: 150px;
+            object-fit: contain;
+            padding: 1rem;
+        }
+
+        .deal-card .card-title {
+            color: #212529;
+            text-decoration: none;
+        }
+
+        .ratings .bi-star-fill {
+            color: #ffc107;
+            /* Bootstrap yellow */
+        }
+
+        /* Countdown timer styles */
+        .countdown-timer .timer-box {
+            border: 1px solid #e9ecef;
+            border-radius: .375rem;
+            /* Bootstrap default rounded */
+            padding: 0.25rem 0;
+        }
+
+        .countdown-timer .timer-value {
+            font-weight: bold;
+            display: block;
+        }
+
+        .countdown-timer .timer-unit {
+            font-size: 0.7em;
+            color: #6c757d;
+            /* text-muted */
+            display: block;
+        }
+
+        .feature-icon {
+            /* Make icons larger and green */
+            font-size: 2.5rem;
+            color: #198754;
+            /* Bootstrap's 'success' green color */
+        }
+
+        .feature-title {
+            color: #212529;
+            /* Dark color for headings */
+        }
+
+        .footer-bg {
+            /* This is a light grey color similar to the image */
+            background-color: #f0f3f2;
+        }
+
+        .footer-links a {
+            /* Style for the footer links */
+            color: #5c6c75;
+            /* A muted grey color */
+            text-decoration: none;
+            transition: color .2s;
+        }
+
+        .footer-links a:hover {
+            /* Hover effect for links */
+            color: #0d6efd;
+            /* Bootstrap's primary blue color */
+        }
+
+        .footer-bottom-bar {
+            /* A light grey background similar to the image */
+            background-color: #f0f3f2;
+        }
+
+        .powered-by-link {
+            /* Custom green color for the "Codescandy" link */
+            color: #00b853;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .powered-by-link:hover {
+            color: #00a048;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border: 1px solid #ced4da;
+            /* Bootstrap's default border color */
+            border-radius: .375rem;
+            /* Bootstrap's slightly rounded corners */
+            color: #6c757d;
+            /* Muted text color */
+            text-decoration: none;
+            transition: background-color .2s, color .2s, border-color .2s;
+        }
+
+        .social-icon:hover {
+            background-color: #0d6efd;
+            /* Bootstrap's primary blue */
+            color: #fff;
+            border-color: #0d6efd;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" style="color:#00b517;" width="26" height="26"
+                    fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                    <path
+                        d="M0 1.5A.5.5 0 0 1 .5 1h1a.5.5 0 0 1 .485.379L2.89 5H14.5a.5.5 0 0 1 .49.598l-1.5 7A.5.5 0 0 1 13 13H4a.5.5 0 0 1-.49-.402L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 6l1.25 5.5h7.22l1.25-5.5H3.139zM5.5 14a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm6 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                </svg>
+                <span class="fw-semibold fs-5" style="color:#223253;">FreshCart</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <!-- Left side -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Home 1</a></li>
+                            <li><a class="dropdown-item" href="#">Home 2</a></li>
+                            <li><a class="dropdown-item" href="#">Home 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Shop
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Shop 1</a></li>
+                            <li><a class="dropdown-item" href="#">Shop 2</a></li>
+                            <li><a class="dropdown-item" href="#">Shop 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Stores
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Store 1</a></li>
+                            <li><a class="dropdown-item" href="#">Store 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Mega menu
+                        </a>
+                        <ul class="dropdown-menu p-4" style="min-width:320px;">
+                            <li><a class="dropdown-item" href="#">Mega Option 1</a></li>
+                            <li><a class="dropdown-item" href="#">Mega Option 2</a></li>
+                            <li><a class="dropdown-item" href="#">Mega Option 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Pages
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Page 1</a></li>
+                            <li><a class="dropdown-item" href="#">Page 2</a></li>
+                            <li><a class="dropdown-item" href="#">Page 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Docs</a></li>
+                </ul>
+
+                <!-- Center search and location -->
+                <form class="d-flex flex-grow-1 mx-3" role="search" style="max-width: 450px;">
+                    <input class="form-control me-2" type="search" placeholder="Search for products"
+                        aria-label="Search" />
+                    <button class="btn btn-outline-secondary location-btn d-flex align-items-center gap-1"
+                        type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-geo-alt" viewBox="0 0 16 16">
+                            <path
+                                d="M8 0a5.53 5.53 0 0 0-5.5 5.5c0 3.038 4.5 10.5 5.5 10.5s5.5-7.462 5.5-10.5A5.53 5.53 0 0 0 8 0zm0 8a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" />
+                        </svg>
+                        Location
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container">
+        <div class="hero-section d-flex flex-column flex-lg-row align-items-center gap-4">
+            <div class="hero-text flex-grow-1">
+                <span class="badge-sale">Opening Sale Discount 50%</span>
+                <h1 class="mb-3">SuperMarket For Fresh Grocery</h1>
+                <p>Introduced a new model for online grocery shopping and convenient home delivery.</p>
+                <button class="btn btn-show" type="button" aria-label="Show Now">Show Now &rarr;</button>
+            </div>
+            <div class="hero-image-wrap flex-shrink-0 position-relative">
+                <img src="images/Capdsature.PNG" alt="">
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container py-5">
+
+            <!-- Section Header -->
+            <div class="row mb-4 align-items-center">
+                <div class="col">
+                    <h3 class="fw-bold mb-0">Featured Categories</h3>
+                </div>
+                <div class="col-auto nav-arrows">
+                    <a href="#" class="btn btn-light rounded-circle me-1" aria-label="Previous">
+                        <i class="bi bi-chevron-left"></i>
+                    </a>
+                    <a href="#" class="btn btn-light rounded-circle" aria-label="Next">
+                        <i class="bi bi-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category Cards Grid -->
+            <!-- The grid is responsive: 6 cols on large screens, 3 on medium, 2 on small -->
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4">
+
+                <!-- Card 1: Fruits & Vegetables -->
+                <div class="col">
+                    <div class="card h-100 text-center border-light shadow-sm category-card">
+                        <img src="images/category-fruits-vegetables.jpg" class="card-img-top"
+                            alt="Fruits and Vegetables">
+                        <div class="card-body p-2">
+                            <p class="card-text">Fruits & Vegetables</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Fruits & Vegetables (with drinks) -->
+                <div class="col">
+                    <div class="card h-100 text-center border-light shadow-sm category-card">
+                        <img src="images/category-cold-drinks-juices.jpg" class="card-img-top" alt="Juice and Soda">
+                        <div class="card-body p-2">
+                            <p class="card-text">Fruits & Vegetables</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Dairy, Bread & Eggs -->
+                <div class="col">
+                    <div class="card h-100 text-center border-light shadow-sm category-card">
+                        <img src="images/category-bakery-biscuits.jpg" class="card-img-top" alt="Dairy, Bread and Eggs">
+                        <div class="card-body p-2">
+                            <p class="card-text">Dairy, Bread & Eggs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Snack & Munchies -->
+                <div class="col">
+                    <div class="card h-100 text-center border-light shadow-sm category-card">
+                        <img src="images/category-snack-munchies.jpg" class="card-img-top" alt="Snacks and Munchies">
+                        <div class="card-body p-2">
+                            <p class="card-text">Snack & Munchies</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Backery & Biscuites -->
+                <div class="col">
+                    <div class="card h-100 text-center border-light shadow-sm category-card">
+                        <img src="images/category-instant-food.jpg" class="card-img-top" alt="Bakery and Biscuits">
+                        <div class="card-body p-2">
+                            <p class="card-text">Backery & Biscuites</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Instant Food -->
+                <div class="col">
+                    <div class="card h-100 text-center border-light shadow-sm category-card">
+                        <img src="images/category-bakery-biscuits.jpg" class="card-img-top" alt="Instant Food">
+                        <div class="card-body p-2">
+                            <p class="card-text">Instant Food</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section>
+        <div class="container my-5">
+            <div class="row g-4">
+
+                <!-- Banner 1: Fruits & Vegetables -->
+                <div class="col-lg-6">
+                    <div class="promo-banner rounded-3 p-4 p-md-5 h-100"
+                        style="background-image: url('images/grocery-banner.png');">
+                        <div class="content">
+                            <h2 class="fw-bold">Fruits & Vegetables</h2>
+                            <p>Get Upto 30% Off</p>
+                            <a href="#" class="btn btn-dark-blue">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banner 2: Freshly Baked Buns -->
+                <div class="col-lg-6">
+                    <div class="promo-banner rounded-3 p-4 p-md-5 h-100"
+                        style="background-image: url('images/grocery-banner-2.jpg');">
+                        <div class="content">
+                            <h2 class="fw-bold">Freshly Baked Buns</h2>
+                            <p>Get Upto 25% Off</p>
+                            <a href="#" class="btn btn-dark-blue">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container py-5">
+            <h3 class="fw-bold mb-4">Popular Products</h3>
+
+            <!-- Product Grid: 5 cols on large, 3 on medium, 2 on small screens -->
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+
+                <!-- Product 1 -->
+                <div class="col">
+                    <div class="card product-card h-100">
+                        <div class="position-relative">
+                            <div class="product-badge position-absolute top-0 start-0 m-2">
+                                <div><span class="badge bg-danger">Sale</span></div>
+                                <div><span class="badge bg-success mt-1">10%</span></div>
+                            </div>
+                            <a href="#"><img src="images/product-img-1.jpg" class="card-img-top"
+                                    alt="Haldiram's Sev Bhujia"></a>
+                        </div>
+                        <div class="card-body d-flex flex-column pb-3">
+                            <small class="text-muted">Snack & Munchies</small>
+                            <h6 class="card-title my-1 flex-grow-1"><a href="#">Haldiram's Sev Bhujia</a></h6>
+                            <div class="ratings small mb-2">
+                                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star"></i>
+                                <span class="text-muted ms-1">4.3 (4)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold text-dark">$21.6</span>
+                                    <del class="text-muted small ms-1">$24</del>
+                                </div>
+                                <a href="#" class="btn btn-success btn-sm">+ Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col">
+                    <div class="card product-card h-100">
+                        <a href="#"><img src="images/product-img-2.jpg" class="card-img-top"
+                                alt="NutriChoice Digestive"></a>
+                        <div class="card-body d-flex flex-column pb-3">
+                            <small class="text-muted">Bakery & Biscuits</small>
+                            <h6 class="card-title my-1 flex-grow-1"><a href="#">NutriChoice Digestive</a></h6>
+                            <div class="ratings small mb-2">
+                                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star"></i>
+                                <span class="text-muted ms-1">4.3 (4)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold text-dark">$24</span>
+                                    <del class="text-muted small ms-1">$24</del>
+                                </div>
+                                <a href="#" class="btn btn-success btn-sm">+ Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col">
+                    <div class="card product-card h-100">
+                        <div class="position-relative">
+                            <div class="product-badge position-absolute top-0 start-0 m-2">
+                                <span class="badge badge-offer">Buy 1 Get $4.00 Off</span>
+                            </div>
+                            <a href="#"><img src="images/product-img-3.jpg" class="card-img-top"
+                                    alt="Cadbury 5 Star Chocolate"></a>
+                        </div>
+                        <div class="card-body d-flex flex-column pb-3">
+                            <small class="text-muted">Bakery & Biscuits</small>
+                            <h6 class="card-title my-1 flex-grow-1"><a href="#">Cadbury 5 Star Chocolate</a></h6>
+                            <div class="ratings small mb-2">
+                                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star"></i>
+                                <span class="text-muted ms-1">4.3 (4)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold text-dark">$35</span>
+                                    <del class="text-muted small ms-1">$35</del>
+                                </div>
+                                <a href="#" class="btn btn-success btn-sm">+ Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col">
+                    <div class="card product-card h-100">
+                        <div class="position-relative">
+                            <div class="product-badge position-absolute top-0 start-0 m-2">
+                                <div><span class="badge bg-danger">Hot</span></div>
+                                <div><span class="badge bg-success mt-1">40%</span></div>
+                            </div>
+                            <a href="#"><img src="images/product-img-4.jpg" class="card-img-top"
+                                    alt="Onion Flavour Potato"></a>
+                        </div>
+                        <div class="card-body d-flex flex-column pb-3">
+                            <small class="text-muted">Snack & Munchies</small>
+                            <h6 class="card-title my-1 flex-grow-1"><a href="#">Onion Flavour Potato</a></h6>
+                            <div class="ratings small mb-2">
+                                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star"></i>
+                                <span class="text-muted ms-1">4.3 (4)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold text-dark">$3</span>
+                                    <del class="text-muted small ms-1">$5</del>
+                                </div>
+                                <a href="#" class="btn btn-success btn-sm">+ Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col">
+                    <div class="card product-card h-100">
+                        <div class="position-relative">
+                            <div class="product-badge position-absolute top-0 start-0 m-2">
+                                <span class="badge bg-success">35%</span>
+                            </div>
+                            <a href="#"><img src="images/product-img-5.jpg" class="card-img-top"
+                                    alt="Salted Instant Popcorn"></a>
+                        </div>
+                        <div class="card-body d-flex flex-column pb-3">
+                            <small class="text-muted">Instant Food</small>
+                            <h6 class="card-title my-1 flex-grow-1"><a href="#">Salted Instant Popcorn</a></h6>
+                            <div class="ratings small mb-2">
+                                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star"></i>
+                                <span class="text-muted ms-1">4.3 (4)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold text-dark">$11.7</span>
+                                    <del class="text-muted small ms-1">$18</del>
+                                </div>
+                                <a href="#" class="btn btn-success btn-sm">+ Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col">
+                    <div class="card product-card h-100">
+                        <div class="position-relative">
+                            <div class="product-badge position-absolute top-0 start-0 m-2">
+                                <span class="badge badge-offer">Buy 1 Get $4.00 Off</span>
+                            </div>
+                            <a href="#"><img src="images/product-img-3.jpg" class="card-img-top"
+                                    alt="Cadbury 5 Star Chocolate"></a>
+                        </div>
+                        <div class="card-body d-flex flex-column pb-3">
+                            <small class="text-muted">Bakery & Biscuits</small>
+                            <h6 class="card-title my-1 flex-grow-1"><a href="#">Cadbury 5 Star Chocolate</a></h6>
+                            <div class="ratings small mb-2">
+                                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star"></i>
+                                <span class="text-muted ms-1">4.3 (4)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold text-dark">$35</span>
+                                    <del class="text-muted small ms-1">$35</del>
+                                </div>
+                                <a href="#" class="btn btn-success btn-sm">+ Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="col">
+                    <div class="card product-card h-100">
+                        <div class="position-relative">
+                            <div class="product-badge position-absolute top-0 start-0 m-2">
+                                <div><span class="badge bg-danger">Sale</span></div>
+                                <div><span class="badge bg-success mt-1">10%</span></div>
+                            </div>
+                            <a href="#"><img src="images/product-img-1.jpg" class="card-img-top"
+                                    alt="Haldiram's Sev Bhujia"></a>
+                        </div>
+                        <div class="card-body d-flex flex-column pb-3">
+                            <small class="text-muted">Snack & Munchies</small>
+                            <h6 class="card-title my-1 flex-grow-1"><a href="#">Haldiram's Sev Bhujia</a></h6>
+                            <div class="ratings small mb-2">
+                                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star"></i>
+                                <span class="text-muted ms-1">4.3 (4)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold text-dark">$21.6</span>
+                                    <del class="text-muted small ms-1">$24</del>
+                                </div>
+                                <a href="#" class="btn btn-success btn-sm">+ Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="col">
+                    <div class="card product-card h-100">
+                        <div class="position-relative">
+                            <div class="product-badge position-absolute top-0 start-0 m-2">
+                                <span class="badge bg-success">40%</span>
+                            </div>
+                            <a href="#"><img src="images/product-img-6.jpg" class="card-img-top"
+                                    alt="Blueberry Greek Yogurt"></a>
+                        </div>
+                        <div class="card-body d-flex flex-column pb-3">
+                            <small class="text-muted">Dairy, Bread & Eggs</small>
+                            <h6 class="card-title my-1 flex-grow-1"><a href="#">Blueberry Greek Yogurt</a></h6>
+                            <div class="ratings small mb-2">
+                                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star"></i>
+                                <span class="text-muted ms-1">4.3 (4)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold text-dark">$14.4</span>
+                                    <del class="text-muted small ms-1">$24</del>
+                                </div>
+                                <a href="#" class="btn btn-success btn-sm">+ Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="col">
+                    <div class="card product-card h-100">
+                        <a href="#"><img src="images/product-img-7.jpg" class="card-img-top"
+                                alt="Britannia Cheese Slices"></a>
+                        <div class="card-body d-flex flex-column pb-3">
+                            <small class="text-muted">Dairy, Bread & Eggs</small>
+                            <h6 class="card-title my-1 flex-grow-1"><a href="#">Britannia Cheese Slices</a></h6>
+                            <div class="ratings small mb-2">
+                                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star"></i>
+                                <span class="text-muted ms-1">4.3 (4)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold text-dark">$24</span>
+                                    <del class="text-muted small ms-1">$24</del>
+                                </div>
+                                <a href="#" class="btn btn-success btn-sm">+ Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="col">
+                    <div class="card product-card h-100">
+                        <div class="position-relative">
+                            <div class="product-badge position-absolute top-0 start-0 m-2">
+                                <span class="badge bg-success">15%</span>
+                            </div>
+                            <a href="#"><img src="images/product-img-8.jpg" class="card-img-top"
+                                    alt="Kellogg's Original Cereals"></a>
+                        </div>
+                        <div class="card-body d-flex flex-column pb-3">
+                            <small class="text-muted">Instant Food</small>
+                            <h6 class="card-title my-1 flex-grow-1"><a href="#">Kellogg's Original Cereals</a></h6>
+                            <div class="ratings small mb-2">
+                                <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                    class="bi bi-star"></i>
+                                <span class="text-muted ms-1">4.3 (4)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold text-dark">$29.75</span>
+                                    <del class="text-muted small ms-1">$35</del>
+                                </div>
+                                <a href="#" class="btn btn-success btn-sm">+ Add</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container py-5">
+            <h3 class="fw-bold mb-4">Daily Best Sells</h3>
+
+            <!-- The grid is responsive: 4 cols on large, 2 on medium, 1 on small screens -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+                <!-- Promo Banner Column -->
+                <div class="col">
+                    <div
+                        class="promo-banner h-100 rounded-3 text-white p-4 p-lg-5 d-flex flex-column justify-content-center">
+                        <h2 class="fw-bold">100% Organic Coffee Beans.</h2>
+                        <p>Get the best deal before close.</p>
+                        <div class="mt-3">
+                            <a href="#" class="btn btn-brand-green rounded-3">Shop Now &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 1 -->
+                <div class="col">
+                    <div class="card deal-card h-100">
+                        <img src="images/product-img-11.jpg" class="card-img-top" alt="Roast Ground Coffee">
+                        <div class="card-body d-flex flex-column">
+                            <small class="text-muted">Tea, Coffee & Drinks</small>
+                            <h6 class="card-title fw-bold my-1">Roast Ground Coffee</h6>
+                            <div class="d-flex justify-content-between align-items-center my-2">
+                                <div>
+                                    <span class="fw-bold text-dark">$13.5</span>
+                                    <del class="text-muted small ms-1">$18</del>
+                                </div>
+                                <div class="ratings small d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-half"></i>
+                                    <span class="ms-1">4.3</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-brand-green w-100 my-2 rounded-3">+ Add to cart</a>
+                            <div class="countdown-timer mt-auto">
+                                <div class="row g-2 text-center">
+                                    <div class="col-3">
+                                        <div class="timer-box"><span class="timer-value">1160</span><span
+                                                class="timer-unit">Days</span></div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="timer-box"><span class="timer-value">10</span><span
+                                                class="timer-unit">Hours</span></div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="timer-box"><span class="timer-value">40</span><span
+                                                class="timer-unit">Mins</span></div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="timer-box"><span class="timer-value">10</span><span
+                                                class="timer-unit">Sec</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="col">
+                    <div class="card deal-card h-100">
+                        <img src="images/product-img-12.jpg" class="card-img-top" alt="Crushed Tomatoes">
+                        <div class="card-body d-flex flex-column">
+                            <small class="text-muted">Fruits & Vegetables</small>
+                            <h6 class="card-title fw-bold my-1">Crushed Tomatoes</h6>
+                            <div class="d-flex justify-content-between align-items-center my-2">
+                                <div>
+                                    <span class="fw-bold text-dark">$13.5</span>
+                                    <del class="text-muted small ms-1">$18</del>
+                                </div>
+                                <div class="ratings small d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-half"></i>
+                                    <span class="ms-1">4.3</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-brand-green w-100 my-2 rounded-3">+ Add to cart</a>
+                            <div class="countdown-timer mt-auto">
+                                <div class="row g-2 text-center">
+                                    <div class="col-3">
+                                        <div class="timer-box"><span class="timer-value">1160</span><span
+                                                class="timer-unit">Days</span></div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="timer-box"><span class="timer-value">10</span><span
+                                                class="timer-unit">Hours</span></div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="timer-box"><span class="timer-value">40</span><span
+                                                class="timer-unit">Mins</span></div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="timer-box"><span class="timer-value">10</span><span
+                                                class="timer-unit">Sec</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="col">
+                    <div class="card deal-card h-100">
+                        <img src="images/product-img-13.jpg" class="card-img-top" alt="Golden Pineapple">
+                        <div class="card-body d-flex flex-column">
+                            <small class="text-muted">Fruits & Vegetables</small>
+                            <h6 class="card-title fw-bold my-1">Golden Pineapple</h6>
+                            <div class="d-flex justify-content-between align-items-center my-2">
+                                <div>
+                                    <span class="fw-bold text-dark">$14.4</span>
+                                    <del class="text-muted small ms-1">$18</del>
+                                </div>
+                                <div class="ratings small d-flex align-items-center">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-half"></i>
+                                    <span class="ms-1">4.3</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-brand-green w-100 my-2 rounded-3">+ Add to cart</a>
+                            <div class="countdown-timer mt-auto">
+                                <div class="row g-2 text-center">
+                                    <div class="col-3">
+                                        <div class="timer-box"><span class="timer-value">1160</span><span
+                                                class="timer-unit">Days</span></div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="timer-box"><span class="timer-value">10</span><span
+                                                class="timer-unit">Hours</span></div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="timer-box"><span class="timer-value">40</span><span
+                                                class="timer-unit">Mins</span></div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="timer-box"><span class="timer-value">10</span><span
+                                                class="timer-unit">Sec</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container py-5">
+            <!-- The grid is responsive: 4 cols on large, 2 on medium, 1 on small screens -->
+            <div class="row g-4 text-center">
+
+                <!-- Feature 1: 10 minute grocery -->
+                <div class="col-lg-3 col-md-6">
+                    <i class="fa-solid fa-clock fs-2"></i>
+                    <h5 class="fw-bold feature-title">10 minute grocery now</h5>
+                    <p class="text-muted">
+                        Get your order delivered to your doorstep at the earliest from FreshCart pickup stores near you.
+                    </p>
+                </div>
+
+                <!-- Feature 2: Best Prices & Offers -->
+                <div class="col-lg-3 col-md-6">
+                    <i class="fa-solid fa-gift fs-2"></i>
+                    <h5 class="fw-bold feature-title">Best Prices & Offers</h5>
+                    <p class="text-muted">
+                        Cheaper prices than your local supermarket, great cashback offers to top it off. Get best
+                        pricess & offers.
+                    </p>
+                </div>
+
+                <!-- Feature 3: Wide Assortment -->
+                <div class="col-lg-3 col-md-6">
+                    <i class="fa-solid fa-box fs-2"></i>
+                    <h5 class="fw-bold feature-title">Wide Assortment</h5>
+                    <p class="text-muted">
+                        Choose from 5000+ products across food, personal care, household, bakery, veg and non-veg &
+                        other categories.
+                    </p>
+                </div>
+
+                <!-- Feature 4: Easy Returns -->
+                <div class="col-lg-3 col-md-6">
+                   <i class="fa-solid fa-repeat fs-2"></i>
+                    <h5 class="fw-bold feature-title">Easy Returns</h5>
+                    <p class="text-muted">
+                        Not satisfied with a product? Return it at the doorstep & get a refund within hours. No
+                        questions asked policy.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer-bg">
+        <div class="container py-5">
+            <!-- The grid is responsive and will stack on smaller screens -->
+            <div class="row footer-links">
+
+                <!-- Categories Column (wider with two internal columns) -->
+                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                    <h6 class="fw-bold mb-3">Categories</h6>
+                    <div class="row">
+                        <!-- First list of categories -->
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#">Vegetables</a></li>
+                                <li class="mb-2"><a href="#">Breakfast</a></li>
+                                <li class="mb-2"><a href="#">Bakery</a></li>
+                                <li class="mb-2"><a href="#">Atta</a></li>
+                                <li class="mb-2"><a href="#">Sauces</a></li>
+                            </ul>
+                        </div>
+                        <!-- Second list of categories -->
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#">Dairy</a></li>
+                                <li class="mb-2"><a href="#">Cold</a></li>
+                                <li class="mb-2"><a href="#">Tea</a></li>
+                                <li class="mb-2"><a href="#">Masala</a></li>
+                                <li class="mb-2"><a href="#">Chicken</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Get to know us Column -->
+                <div class="col-lg-2 col-md-3 col-6 mb-4 mb-lg-0">
+                    <h6 class="fw-bold mb-3">Get to know us</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Company</a></li>
+                        <li class="mb-2"><a href="#">About</a></li>
+                        <li class="mb-2"><a href="#">Blog</a></li>
+                        <li class="mb-2"><a href="#">Help Center</a></li>
+                        <li class="mb-2"><a href="#">Our Value</a></li>
+                    </ul>
+                </div>
+
+                <!-- For Consumers Column -->
+                <div class="col-lg-2 col-md-3 col-6 mb-4 mb-lg-0">
+                    <h6 class="fw-bold mb-3">For Consumers</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Payments</a></li>
+                        <li class="mb-2"><a href="#">Shipping</a></li>
+                        <li class="mb-2"><a href="#">Product Returns</a></li>
+                        <li class="mb-2"><a href="#">FAQ</a></li>
+                        <li class="mb-2"><a href="#">Shop Checkout</a></li>
+                    </ul>
+                </div>
+
+                <!-- Become a Shopper Column -->
+                <div class="col-lg-2 col-md-3 col-6 mb-4 mb-lg-0">
+                    <h6 class="fw-bold mb-3">Become a Shopper</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Shopper Opportunities</a></li>
+                        <li class="mb-2"><a href="#">Become a Shopper</a></li>
+                        <li class="mb-2"><a href="#">Earnings</a></li>
+                        <li class="mb-2"><a href="#">Ideas & Guides</a></li>
+                        <li class="mb-2"><a href="#">New Retailers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Freshcart programs Column -->
+                <div class="col-lg-3 col-md-3 col-6 mb-4 mb-lg-0">
+                    <h6 class="fw-bold mb-3">Freshcart programs</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Freshcart programs</a></li>
+                        <li class="mb-2"><a href="#">Gift Cards</a></li>
+                        <li class="mb-2"><a href="#">Promos & Coupons</a></li>
+                        <li class="mb-2"><a href="#">Freshcart Ads</a></li>
+                        <li class="mb-2"><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-bar border-top">
+            <div class="container py-3">
+                <!-- The row is responsive and vertically centered -->
+                <div class="row align-items-center">
+
+                    <!-- Copyright Text Column -->
+                    <div class="col-lg-7 col-md-6 mb-2 mb-md-0">
+                        <p class="text-muted small mb-0">
+                            © 2022 - 2025 FreshCart eCommerce HTML Template. All rights reserved. Powered by <a href="#"
+                                class="powered-by-link">Codescandy</a>.
+                        </p>
+                    </div>
+
+                    <!-- Social Media Icons Column -->
+                    <div class="col-lg-5 col-md-6">
+                        <div class="d-flex align-items-center justify-content-md-end">
+                            <span class="text-muted small me-3">Follow us on</span>
+                            <a href="#" class="social-icon me-2"><i class="fa-brands fa-square-facebook"></i></a>
+                            <a href="#" class="social-icon me-2"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
