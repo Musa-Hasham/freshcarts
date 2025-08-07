@@ -1,0 +1,502 @@
+
+        .navbar-nav .nav-link {
+            padding-right: 1rem;
+            padding-left: 1rem;
+            color: #223253;
+            font-weight: 500;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link:focus {
+            color: #2a9d8f;
+        }
+
+        .btn-all-departments {
+            background-color: #00b517;
+            color: white;
+            font-weight: 600;
+        }
+
+        .btn-all-departments:hover,
+        .btn-all-departments:focus {
+            background-color: #018c11;
+            color: white;
+        }
+
+        .location-btn {
+            border-color: #ced4da;
+            color: #3a4968;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            position: relative;
+            color: #3a4968;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .icon-btn .badge {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-color: #d2eadf;
+            border-radius: 0.5rem;
+            padding: 3rem 2rem;
+            position: relative;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .hero-text .badge-sale {
+            background-color: #ffb703;
+            color: #222;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 9999px;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero-text h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+            line-height: 1.1;
+            color: #0c1e2f;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #6c757d;
+            max-width: 500px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text .btn-show {
+            background-color: #0c1e2f;
+            color: white;
+            font-weight: 600;
+            padding: 0.625rem 1.5rem;
+            border-radius: 0.375rem;
+            border: none;
+        }
+
+        .hero-text .btn-show:hover,
+        .hero-text .btn-show:focus {
+            background-color: #07344a;
+            color: white;
+        }
+
+        .hero-image-wrap {
+            position: relative;
+            max-width: 420px;
+            margin-left: auto;
+        }
+
+        .hero-image-wrap img {
+            border-radius: 0.5rem;
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Circular background behind image */
+        .hero-circle-bg {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 320px;
+            height: 320px;
+            background-color: #026c3e;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        /* Green arc */
+        .hero-circle-arc {
+            position: absolute;
+            top: 50%;
+            right: 8px;
+            width: 210px;
+            height: 210px;
+            border: 4px solid #00b517;
+            border-radius: 50%;
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+            transform: translateY(-50%) rotate(20deg);
+            z-index: 2;
+        }
+
+        /* Decorative small cards */
+        .decorative-card {
+            background: white;
+            box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 0.1);
+            border-radius: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.85rem;
+            width: 120px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .decorative-card img {
+            width: 36px;
+            height: 36px;
+            border-radius: 0.3rem;
+            object-fit: cover;
+            flex-shrink: 0;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+        }
+
+        .decorative-card .info {
+            flex: 1;
+            line-height: 1.1;
+        }
+
+        .decorative-card .info .title {
+            font-weight: 600;
+            color: #223253;
+        }
+
+        .decorative-card .info .rating {
+            font-size: 0.75rem;
+            color: #6c757d;
+        }
+
+        .decorative-card .rating-stars {
+            color: #f4c150;
+            font-size: 0.75rem;
+            margin-left: auto;
+            font-weight: 600;
+            user-select: none;
+        }
+
+        /* Positions for cards around image */
+        .card-kiwi {
+            position: absolute;
+            top: 2.5rem;
+            left: 52%;
+            transform: translateX(-50%);
+            z-index: 4;
+        }
+
+        .card-delivery {
+            position: absolute;
+            bottom: 50%;
+            left: 40%;
+            transform: translate(-50%, 50%);
+            background-color: #e7f8ee;
+            font-weight: 600;
+            color: #0c662a;
+            padding: 0.3rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.85rem;
+            box-shadow: 0 0.1rem 0.25rem rgb(0 109 55 / 0.2);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            z-index: 4;
+        }
+
+        .card-avocado {
+            position: absolute;
+            top: 55%;
+            right: -10px;
+            transform: translateY(-50%);
+            z-index: 4;
+        }
+
+        .card-avocado .rating-stars {
+            margin-left: 6px;
+            color: #9fd68a;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .category-card .card-img-top {
+            height: 120px;
+            object-fit: contain;
+            padding: 1rem;
+        }
+
+        .category-card {
+            transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+        }
+
+        .nav-arrows .btn {
+            width: 32px;
+            height: 32px;
+            padding: 0;
+            line-height: 32px;
+            text-align: center;
+        }
+
+        .promo-banner {
+            background-color: #f1f3f6;
+            /* Light grey background for the banner */
+            background-repeat: no-repeat;
+            background-size: contain;
+            /* Ensure the image fits without being cut off */
+            background-position: right center;
+            /* Position the image to the right and vertically centered */
+
+            min-height: 220px;
+            /* Give the banner a minimum height */
+
+            /* Use flexbox to vertically align the text content */
+            display: flex;
+            align-items: center;
+
+            /* Add a subtle transition for a hover effect */
+            transition: box-shadow .2s ease-in-out;
+        }
+
+        .promo-banner:hover {
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        }
+
+        /* Custom button style to match the dark blue button in the image */
+        .btn-dark-blue {
+            background-color: #0c233b;
+            color: #fff;
+            padding: 0.6rem 1.75rem;
+            border-radius: 8px;
+            /* Slightly rounded corners */
+            font-weight: 500;
+        }
+
+        .btn-dark-blue:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* On smaller screens (tablets and below), adjust the image size and position */
+        @media (max-width: 992px) {
+            .promo-banner {
+                background-size: 40%;
+            }
+        }
+
+        /* On mobile screens, stack the text above the image */
+        @media (max-width: 576px) {
+            .promo-banner {
+                background-size: 60%;
+                background-position: bottom right;
+                min-height: 250px;
+                align-items: flex-start;
+                /* Align text to the top */
+            }
+
+            .promo-banner .content {
+                width: 100%;
+                /* Allow text to take full width */
+            }
+        }
+
+        .product-card {
+            border: 1px solid #e9ecef;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .4rem 1.5rem rgba(0, 0, 0, .1);
+        }
+
+        .product-card .card-img-top {
+            height: 160px;
+            object-fit: contain;
+            padding: 1.25rem;
+        }
+
+        .product-card .card-title a {
+            color: #212529;
+            text-decoration: none;
+            transition: color .2s ease;
+        }
+
+        .product-card .card-title a:hover {
+            color: #0d6efd;
+            /* Bootstrap primary blue */
+        }
+
+        .ratings .bi-star-fill {
+            color: #ffc107;
+            /* Bootstrap yellow for filled stars */
+        }
+
+        .product-badge .badge {
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        /* Custom badge for "Buy 1 Get..." offers */
+        .badge-offer {
+            background-color: #dc3545;
+            /* Bootstrap danger red */
+            color: white;
+            font-size: 0.7em !important;
+        }
+
+        /* Style for the main promotional banner */
+        .promo-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/banner-deal.jpg') no-repeat center center;
+            background-size: cover;
+            border: none;
+        }
+
+        .promo-banner h2 {
+            font-size: 1.75rem;
+        }
+
+        /* Custom bright green button */
+        .btn-brand-green {
+            background-color: #00b853;
+            border-color: #00b853;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            font-weight: 600;
+        }
+
+        .btn-brand-green:hover {
+            background-color: #00a048;
+            border-color: #009643;
+            color: white;
+        }
+
+        /* Product Card styles */
+        .deal-card {
+            border: 1px solid #e9ecef;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .deal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 .4rem 1.5rem rgba(0, 0, 0, .08);
+        }
+
+        .deal-card .card-img-top {
+            height: 150px;
+            object-fit: contain;
+            padding: 1rem;
+        }
+
+        .deal-card .card-title {
+            color: #212529;
+            text-decoration: none;
+        }
+
+        .ratings .bi-star-fill {
+            color: #ffc107;
+            /* Bootstrap yellow */
+        }
+
+        /* Countdown timer styles */
+        .countdown-timer .timer-box {
+            border: 1px solid #e9ecef;
+            border-radius: .375rem;
+            /* Bootstrap default rounded */
+            padding: 0.25rem 0;
+        }
+
+        .countdown-timer .timer-value {
+            font-weight: bold;
+            display: block;
+        }
+
+        .countdown-timer .timer-unit {
+            font-size: 0.7em;
+            color: #6c757d;
+            /* text-muted */
+            display: block;
+        }
+
+        .feature-icon {
+            /* Make icons larger and green */
+            font-size: 2.5rem;
+            color: #198754;
+            /* Bootstrap's 'success' green color */
+        }
+
+        .feature-title {
+            color: #212529;
+            /* Dark color for headings */
+        }
+
+        .footer-bg {
+            /* This is a light grey color similar to the image */
+            background-color: #f0f3f2;
+        }
+
+        .footer-links a {
+            /* Style for the footer links */
+            color: #5c6c75;
+            /* A muted grey color */
+            text-decoration: none;
+            transition: color .2s;
+        }
+
+        .footer-links a:hover {
+            /* Hover effect for links */
+            color: #0d6efd;
+            /* Bootstrap's primary blue color */
+        }
+
+        .footer-bottom-bar {
+            /* A light grey background similar to the image */
+            background-color: #f0f3f2;
+        }
+
+        .powered-by-link {
+            /* Custom green color for the "Codescandy" link */
+            color: #00b853;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .powered-by-link:hover {
+            color: #00a048;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border: 1px solid #ced4da;
+            /* Bootstrap's default border color */
+            border-radius: .375rem;
+            /* Bootstrap's slightly rounded corners */
+            color: #6c757d;
+            /* Muted text color */
+            text-decoration: none;
+            transition: background-color .2s, color .2s, border-color .2s;
+        }
+
+        .social-icon:hover {
+            background-color: #0d6efd;
+            /* Bootstrap's primary blue */
+            color: #fff;
+            border-color: #0d6efd;
+        }
